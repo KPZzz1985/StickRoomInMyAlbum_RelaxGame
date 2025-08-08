@@ -9,10 +9,19 @@ public class PlaceholderArea : MonoBehaviour, IDropHandler
         if (dragObj == null) return;
         var data = dragObj.GetComponent<StickerDragData>();
         if (data == null || string.IsNullOrEmpty(data.stickerId)) return;
+
+        // Only allow drop on matching placeholder zone
+        if (transform.parent == null) return;
+        string placeholderGroupName = transform.parent.name; // e.g. "PLACER_STK_15_eye"
+        if (!placeholderGroupName.StartsWith("PLACER_STK_")) return;
+        // Map placeholder group to sticker ID: replace prefix
+        string placeholderStickerId = placeholderGroupName.Replace("PLACER_STK_", "STK_");
+        if (data.stickerId != placeholderStickerId)
+            return; // wrong sticker for this placeholder
+
         var sceneInit = FindObjectOfType<SceneInitializer>();
         if (sceneInit != null)
         {
-            // Activate existing sticker in stash by ID
             sceneInit.PlaceSticker(data.stickerId, transform);
         }
 
@@ -21,7 +30,7 @@ public class PlaceholderArea : MonoBehaviour, IDropHandler
         if (dragHandler != null)
             dragHandler.NotifyDropSuccess();
 
-        // Optionally disable placeholder
+        // Disable placeholder after successful drop
         gameObject.SetActive(false);
     }
 }
