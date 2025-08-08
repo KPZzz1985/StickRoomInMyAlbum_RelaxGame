@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # StickRoomInMyAlbum_RelaxGame
 
 Unity-based engine for an interactive sticker room game, inspired by "My Sticker Room".
@@ -31,3 +32,6 @@ In the scene:
 ---
 
 © 2025 StickRoomInMyAlbum Development Team
+=======
+# StickRoomInMyAlbum_RelaxGame
+>>>>>>> origin/main
