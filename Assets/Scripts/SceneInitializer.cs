@@ -175,6 +175,13 @@ public class SceneInitializer : MonoBehaviour
             if (srOverlay != null)
                 primaryTransforms.Add(srOverlay.transform);
         }
+        // Copy placeholder sorting order only to Base sprite
+        var placeholderSr = FindSpriteRendererInChildren(placeholderTransform);
+        if (placeholderSr != null && srBase != null)
+        {
+            int order = placeholderSr.sortingOrder;
+            srBase.sortingOrder = order;
+        }
         // Gather Place_Zone_x sprite transforms for all Place_Zone groups
         var zoneTransforms = new List<Transform>();
         foreach (Transform grp in stkObj)
