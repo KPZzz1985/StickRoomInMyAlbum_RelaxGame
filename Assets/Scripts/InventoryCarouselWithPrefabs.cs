@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using Cysharp.Threading.Tasks;
 
 /// <summary>
 /// Prefab-based infinite three-slot carousel using InventoryIcon prefab.
@@ -116,6 +118,7 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
         {
             currentIndex--;
             UpdateSlots();
+            AnimateWavePrev().Forget();
         }
     }
 
@@ -127,6 +130,7 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
         {
             currentIndex++;
             UpdateSlots();
+            AnimateWaveNext().Forget();
         }
     }
 
@@ -138,5 +142,53 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
         if (stash.Count == 0) { ClearSlots(); return; }
         if (currentIndex >= stash.Count) currentIndex = stash.Count - 1;
         UpdateSlots();
+    }
+
+    // Wave animation when pressing Next: right->center->left
+    private async UniTaskVoid AnimateWaveNext()
+    {
+        if (rightInst != null)
+            await ScalePulse(rightInst.transform, 2f, 0.075f);
+        if (centerInst != null)
+            await ScalePulse(centerInst.transform, 1.5f, 0.075f);
+        if (leftInst != null)
+            await ScalePulse(leftInst.transform, 1.25f, 0.075f);
+    }
+
+    // Wave animation when pressing Prev: left->center->right
+    private async UniTaskVoid AnimateWavePrev()
+    {
+        if (leftInst != null)
+            await ScalePulse(leftInst.transform, 2f, 0.075f);
+        if (centerInst != null)
+            await ScalePulse(centerInst.transform, 1.5f, 0.075f);
+        if (rightInst != null)
+            await ScalePulse(rightInst.transform, 1.25f, 0.075f);
+    }
+
+    // Scale pulse: scale to factor and back over totalDuration (half up and half down)
+    private async UniTask ScalePulse(Transform tr, float factor, float totalDuration)
+    {
+        Vector3 initial = tr.localScale;
+        Vector3 target = initial * factor;
+        float half = totalDuration * 0.5f;
+        float elapsed = 0f;
+        // scale up
+        while (elapsed < half)
+        {
+            tr.localScale = Vector3.Lerp(initial, target, elapsed / half);
+            elapsed += Time.deltaTime;
+            await UniTask.Yield();
+        }
+        tr.localScale = target;
+        // scale down
+        elapsed = 0f;
+        while (elapsed < half)
+        {
+            tr.localScale = Vector3.Lerp(target, initial, elapsed / half);
+            elapsed += Time.deltaTime;
+            await UniTask.Yield();
+        }
+        tr.localScale = initial;
     }
 }
