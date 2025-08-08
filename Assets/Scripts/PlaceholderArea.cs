@@ -8,13 +8,19 @@ public class PlaceholderArea : MonoBehaviour, IDropHandler
         var dragObj = eventData.pointerDrag;
         if (dragObj == null) return;
         var data = dragObj.GetComponent<StickerDragData>();
-        if (data == null) return;
-
-        var stickerPrefab = data.stickerPrefab;
+        if (data == null || string.IsNullOrEmpty(data.stickerId)) return;
         var sceneInit = FindObjectOfType<SceneInitializer>();
-        if (sceneInit != null && stickerPrefab != null)
-            sceneInit.PlaceSticker(stickerPrefab, transform.position);
-        
+        if (sceneInit != null)
+        {
+            // Activate existing sticker in stash by ID
+            sceneInit.PlaceSticker(data.stickerId, transform);
+        }
+
+        // Notify UI icon it was dropped successfully so it can be destroyed
+        var dragHandler = dragObj.GetComponent<StickerDragHandler>();
+        if (dragHandler != null)
+            dragHandler.NotifyDropSuccess();
+
         // Optionally disable placeholder
         gameObject.SetActive(false);
     }

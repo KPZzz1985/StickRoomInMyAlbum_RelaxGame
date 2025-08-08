@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -5,6 +6,8 @@ using TMPro;
 
 public class SceneInitializer : MonoBehaviour
 {
+    // Store initial local scales for animation
+    private Dictionary<string, Vector3> initialScales = new Dictionary<string, Vector3>();
     public PsdMetadata metadata;
     [Header("(Removed) Scene Parents - not used")]
     // Scene prefab hierarchy is instantiated directly
@@ -15,6 +18,7 @@ public class SceneInitializer : MonoBehaviour
     private int totalCount;
     private int usedCount;
     private Transform roomRootTransform;
+    private Transform stashGroupTransform;
 
     void Start()
     {
@@ -30,9 +34,18 @@ public class SceneInitializer : MonoBehaviour
         var roomRoot = Instantiate(metadata.psdPrefab, transform);
         roomRoot.name = metadata.psdName + "_Runtime";
         roomRootTransform = roomRoot.transform;
-        // Hide the full-size sticker stash group
-        var stashGroup = roomRootTransform.Find("Stickers_Stash");
-        if (stashGroup != null) stashGroup.gameObject.SetActive(false);
+        // Cache reference to Stickers_Stash group
+        stashGroupTransform = roomRootTransform.Find("Stickers_Stash");
+
+        // Record initial scales and hide each sticker in stash at startup
+        if (stashGroupTransform != null)
+        {
+            foreach (Transform stk in stashGroupTransform)
+            {
+                initialScales[stk.name] = stk.localScale;
+                stk.gameObject.SetActive(false);
+            }
+        }
         
         // Register placeholder drop handlers by scanning all SpriteRenderers
         var allSR = roomRoot.GetComponentsInChildren<SpriteRenderer>();
@@ -43,10 +56,23 @@ public class SceneInitializer : MonoBehaviour
                 var placeholderObj = srItem.gameObject;
                 if (placeholderObj.GetComponent<PlaceholderArea>() == null)
                     placeholderObj.AddComponent<PlaceholderArea>();
+                // Automatically add a BoxCollider2D trigger matching the sprite bounds for touch/drop
+                if (placeholderObj.GetComponent<BoxCollider2D>() == null)
+                {
+                    var box = placeholderObj.AddComponent<BoxCollider2D>();
+                    box.isTrigger = true;
+                    var sprite = srItem.sprite;
+                    if (sprite != null)
+                    {
+                        // Set collider size and offset based on sprite bounds
+                        box.size = sprite.bounds.size;
+                        box.offset = sprite.bounds.center;
+                    }
+                }
             }
         }
         // Setup inventory counter
-        var stash = stashGroup;
+        var stash = stashGroupTransform;
         totalCount = stash != null ? stash.childCount : 0;
         usedCount = 0;
         if (counterText != null)
@@ -58,7 +84,7 @@ public class SceneInitializer : MonoBehaviour
     void InitializeInventory()
     {
         if (roomRootTransform == null) return;
-        var stashGroup = roomRootTransform.Find("Stickers_Stash");
+        var stashGroup = stashGroupTransform;
         if (stashGroup == null) return;
 
         totalCount = stashGroup.childCount;
@@ -95,38 +121,40 @@ public class SceneInitializer : MonoBehaviour
         }
     }
 
-    // Called by PlaceholderArea when a sticker is dropped
-    public void PlaceSticker(GameObject stickerPrefab, Vector3 dropPosition)
+    // Called by PlaceholderArea when a sticker is dropped; activates existing sticker from stash
+    public void PlaceSticker(string stickerId, Transform placeholderTransform)
     {
-        // Instantiate the sticker from stash
-        var go = Instantiate(stickerPrefab, transform);
-        go.name = stickerPrefab.name + "_Placed";
-        go.transform.position = dropPosition;
-        // Activate its nested Place_Zone and Overlay
-        var placeZone = go.transform.Find("Place_Zone");
-        if (placeZone != null)
-            placeZone.gameObject.SetActive(true);
-        var overlay = go.transform.Find("Overlay");
-        if (overlay != null)
-            overlay.gameObject.SetActive(true);
-        // Deactivate the placeholder sprite
-        // Original placeholder under Previous_Sticker_Shadow_Placer
-        var px = metadata.psdName + "_Runtime";
-        var rootRt = transform.Find(px);
-        if (rootRt != null)
-        {
-            var prev = rootRt.Find("Previous_Sticker_Shadow_Placer");
-            if (prev != null)
-            {
-                var placeholderName = "PLACER_" + stickerPrefab.name.Replace("STK_", "STK_");
-                var placeholder = prev.Find(placeholderName);
-                if (placeholder != null)
-                    placeholder.gameObject.SetActive(false);
-            }
-        }
+        // Activate the corresponding sticker from stash by ID
+        if (stashGroupTransform == null) return;
+        var stkObj = stashGroupTransform.Find(stickerId);
+        if (stkObj == null) return;
+        stkObj.gameObject.SetActive(true);
+        // Remove placeholder
+        placeholderTransform.gameObject.SetActive(false);
+
         // Update counter
         usedCount++;
         if (counterText != null)
             counterText.text = $"{usedCount}/{totalCount}";
+    }
+
+    // Animate sticker scale from 0 up to its initial value over 1 second using coroutine
+    private IEnumerator AnimateSticker(GameObject stkObj, string id)
+    {
+        float duration = 1f;
+        float elapsed = 0f;
+        Vector3 targetScale = initialScales.ContainsKey(id) ? initialScales[id] : Vector3.one;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            stkObj.transform.localScale = Vector3.Lerp(Vector3.zero, targetScale, t);
+            yield return null;
+        }
+        stkObj.transform.localScale = targetScale;
+        // Clear animation flag
+        var animator = stkObj.GetComponent<StickerAnimator>();
+        if (animator != null)
+            animator.isStickerAnimation = false;
     }
 }
