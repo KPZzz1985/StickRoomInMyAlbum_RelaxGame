@@ -100,27 +100,42 @@ public class SceneInitializer : MonoBehaviour
 
         foreach (Transform stkGrp in stashGroup)
         {
-            // find Base sprite renderer by matching sprite.name to group name
-            var srs = stkGrp.GetComponentsInChildren<SpriteRenderer>(true);
+            string groupId = stkGrp.name.Trim();
+            Debug.Log($"InitializeInventory: processing group '{groupId}'");
+            // Use trimmed group ID for matching
+            // Debug sprite renderer count
+            var allSrs = stkGrp.GetComponentsInChildren<SpriteRenderer>(true);
+            Debug.Log($"InitializeInventory: found {allSrs.Length} SpriteRenderer(s) under group '{groupId}'");
+            // find Base sprite renderer by matching sprite.name to groupId
             SpriteRenderer srBase = null;
-            foreach (var sr in srs)
+            foreach (var sr in allSrs)
             {
-                if (sr.sprite != null && sr.sprite.name == stkGrp.name)
+                if (sr.sprite == null) continue;
+                // Use the Sprite asset name (trimmed) for matching
+                string spriteName = sr.sprite.name.Trim();
+                Debug.Log($"InitializeInventory: checking sr.sprite '{spriteName}' against '{groupId}'");
+                if (spriteName == groupId)
                 {
                     srBase = sr;
+                    Debug.Log($"InitializeInventory: matched sr.sprite '{spriteName}'");
                     break;
                 }
             }
-            if (srBase == null) continue;
+            if (srBase == null)
+            {
+                Debug.LogWarning($"InitializeInventory: no matching SpriteRenderer found for group '{groupId}'");
+                continue;
+            }
 
-            // Create inventory icon
+            // Create inventory icon for groupId
+            Debug.Log($"InitializeInventory: creating icon for '{groupId}'");
             var icon = Instantiate(inventoryIconPrefab, inventoryContent);
             var img = icon.GetComponent<UnityEngine.UI.Image>();
             if (img != null) img.sprite = srBase.sprite;
 
             // Add drag data and handler
             var data = icon.GetComponent<StickerDragData>() ?? icon.AddComponent<StickerDragData>();
-            data.stickerId = stkGrp.name;
+            data.stickerId = groupId;
             data.stickerPrefab = stkGrp.gameObject;
             if (icon.GetComponent<StickerDragHandler>() == null)
                 icon.AddComponent<StickerDragHandler>();
@@ -183,34 +198,35 @@ public class SceneInitializer : MonoBehaviour
         // Remove this placeholder
         placeholderTransform.gameObject.SetActive(false);
         // Activate nested placeholders inside this sticker (place zones)
-        foreach (Transform grp in stkObj)
+        foreach (Transform zoneGroup in stkObj)
         {
-            if (grp.name.StartsWith("Place_Zone"))
+            if (zoneGroup.name.StartsWith("Place_Zone"))
             {
-                grp.gameObject.SetActive(true);
-                // For each placeholder group, attach scripts to the SpriteRenderer leaf
-                foreach (Transform phGroup in grp)
+                zoneGroup.gameObject.SetActive(true);
+                // For each placeholder group under Place_Zone
+                foreach (Transform phGroup in zoneGroup)
                 {
                     if (phGroup.name.StartsWith("PLACER_STK_"))
                     {
-                        // Find the SpriteRenderer leaf under this placeholder group
-                        var srLeaf = FindSpriteRendererInChildren(phGroup);
-                        if (srLeaf != null)
+                        // Attach PlaceholderArea to the phGroup itself
+                        if (phGroup.GetComponent<PlaceholderArea>() == null)
+                            phGroup.gameObject.AddComponent<PlaceholderArea>();
+                        // Add BoxCollider2D trigger if missing
+                        if (phGroup.GetComponent<BoxCollider2D>() == null)
                         {
-                            var leafObj = srLeaf.gameObject;
-                            // Add PlaceholderArea if missing
-                            if (leafObj.GetComponent<PlaceholderArea>() == null)
-                                leafObj.AddComponent<PlaceholderArea>();
-                            // Add BoxCollider2D trigger if missing
-                            if (leafObj.GetComponent<BoxCollider2D>() == null)
+                            var box = phGroup.gameObject.AddComponent<BoxCollider2D>();
+                            box.isTrigger = true;
+                            // Size the collider based on the leaf sprite
+                            var srLeaf = FindSpriteRendererInChildren(phGroup);
+                            if (srLeaf != null && srLeaf.sprite != null)
                             {
-                                var box = leafObj.AddComponent<BoxCollider2D>();
-                                box.isTrigger = true;
-                                if (srLeaf.sprite != null)
-                                {
-                                    box.size = srLeaf.sprite.bounds.size;
-                                    box.offset = srLeaf.sprite.bounds.center;
-                                }
+                                // Local position of sprite relative to phGroup
+                                Vector3 leafLocalPos = srLeaf.transform.localPosition;
+                                // Bounds center is local to sprite, so total offset = leafLocalPos + bounds.center
+                                Vector2 boundsSize = srLeaf.sprite.bounds.size;
+                                Vector2 boundsCenter = srLeaf.sprite.bounds.center;
+                                box.size = boundsSize;
+                                box.offset = leafLocalPos + (Vector3)boundsCenter;
                             }
                         }
                     }
