@@ -215,31 +215,71 @@ public class SceneInitializer : MonoBehaviour
     private IEnumerator AnimatePlacement(List<Transform> primary, List<Transform> zones, string id)
     {
         float duration = 0.15f;
-        Vector3 targetScale = initialScales.ContainsKey(id) ? initialScales[id] : Vector3.one;
-        // Parallel animation for primary
+        float upTime = duration;
+        float holdTime = duration / 3f;
+        float downTime = duration / 2f;
+        float peakFactor = 1.3f;
+        Vector3 originalScale = initialScales.ContainsKey(id) ? initialScales[id] : Vector3.one;
+        Vector3 peakScale = originalScale * peakFactor;
+
+        // Phase 1: grow primary to peak
         float elapsed = 0f;
-        while (elapsed < duration)
+        while (elapsed < upTime)
         {
             elapsed += Time.deltaTime;
-            float t = elapsed / duration;
-            var scale = Vector3.Lerp(Vector3.zero, targetScale, t);
+            float t = Mathf.Clamp01(elapsed / upTime);
+            Vector3 scale = Vector3.Lerp(Vector3.zero, peakScale, t);
             foreach (var tf in primary)
                 tf.localScale = scale;
             yield return null;
         }
-        foreach (var tf in primary) tf.localScale = targetScale;
-        // Sequential animation for zones
+        foreach (var tf in primary)
+            tf.localScale = peakScale;
+
+        // Phase 2: hold primary at peak
+        yield return new WaitForSeconds(holdTime);
+
+        // Phase 3: shrink primary to original
+        elapsed = 0f;
+        while (elapsed < downTime)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / downTime);
+            Vector3 scale = Vector3.Lerp(peakScale, originalScale, t);
+            foreach (var tf in primary)
+                tf.localScale = scale;
+            yield return null;
+        }
+        foreach (var tf in primary)
+            tf.localScale = originalScale;
+
+        // Now animate zones sequentially
         foreach (var tf in zones)
         {
+            // Phase 1 for zone: grow
             elapsed = 0f;
-            while (elapsed < duration)
+            while (elapsed < upTime)
             {
                 elapsed += Time.deltaTime;
-                float t = elapsed / duration;
-                tf.localScale = Vector3.Lerp(Vector3.zero, targetScale, t);
+                float t = Mathf.Clamp01(elapsed / upTime);
+                tf.localScale = Vector3.Lerp(Vector3.zero, peakScale, t);
                 yield return null;
             }
-            tf.localScale = targetScale;
+            tf.localScale = peakScale;
+
+            // Phase 2: hold
+            yield return new WaitForSeconds(holdTime);
+
+            // Phase 3: shrink
+            elapsed = 0f;
+            while (elapsed < downTime)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / downTime);
+                tf.localScale = Vector3.Lerp(peakScale, originalScale, t);
+                yield return null;
+            }
+            tf.localScale = originalScale;
         }
     }
 
