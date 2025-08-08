@@ -1,0 +1,2280 @@
+fileFormatVersion: 2
+guid: 0574676ed87c12344a258a9c3176911f
+importerOverride:
+  nativeImporterType: 2089858483
+  scriptedImporterType:
+    serializedVersion: 2
+    Hash: b10b55a1aa6a1aa32521bc0cab59632e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: 'STK_1_butulka3 '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 1841
+      width: 112
+      height: 168
+    spriteID: 23b89981b6f83784a81fbdbdabf716cd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 1841}
+    spritePosition: {x: 255, y: 661}
+  - name: STK_2_miska
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1673
+      y: 534
+      width: 137
+      height: 168
+    spriteID: 3d6c39d634531b446b11caf3efbddd50
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1673, y: 534}
+    spritePosition: {x: 834, y: 1192}
+  - name: STK_3_kristal
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 300
+      y: 3931
+      width: 122
+      height: 141
+    spriteID: d242b882fa511e34483198b2721c162e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 300, y: 3931}
+    spritePosition: {x: 322, y: 951}
+  - name: STK_4_palka
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 951
+      width: 105
+      height: 227
+    spriteID: 7d6b9edd3eacaf649ae1c42e19f89dad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 951}
+    spritePosition: {x: 973, y: 1139}
+  - name: STK_5_palka2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 2342
+      width: 125
+      height: 131
+    spriteID: dd0e1d4c90831d94088427aef794694a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 2342}
+    spritePosition: {x: 1126, y: 1263}
+  - name: PLACER_STK_5_palka2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 2481
+      width: 125
+      height: 131
+    spriteID: f6466bf4a466fc442a917d6aab9be2bf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 2481}
+    spritePosition: {x: 1126, y: 1263}
+  - name: STK_6_polka
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 730
+      y: 3251
+      width: 188
+      height: 142
+    spriteID: ea7512357bd272049b00619dfc2e0e26
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 730, y: 3251}
+    spritePosition: {x: 1099, y: 1207}
+  - name: PLACER_STK_2_miska
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1673
+      y: 710
+      width: 137
+      height: 168
+    spriteID: f2148f8e993e8754d9330afc3e05b80d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1673, y: 710}
+    spritePosition: {x: 834, y: 1192}
+  - name: PLACER_STK_4_palka
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 1186
+      width: 105
+      height: 227
+    spriteID: f229c03643d327547b23f4b41202f170
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 1186}
+    spritePosition: {x: 973, y: 1139}
+  - name: STK_7_polka2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 940
+      y: 3848
+      width: 295
+      height: 204
+    spriteID: b824beb9164ffd8469eb005f91d57f43
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 940, y: 3848}
+    spritePosition: {x: 824, y: 1083}
+  - name: STK_8_knigi
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3931
+      width: 140
+      height: 161
+    spriteID: 7e9ecc2a647dd5c43a4552dca7b8e4d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3931}
+    spritePosition: {x: 182, y: 870}
+  - name: STK_9_butulka2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 1421
+      width: 111
+      height: 202
+    spriteID: 2fc52a9121cdbf143ba0902b6dc43866
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 1421}
+    spritePosition: {x: 330, y: 706}
+  - name: STK_10_butulka
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 534
+      width: 130
+      height: 201
+    spriteID: 23b5dcf5342a56846a0ca0b81ca0cdf0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 534}
+    spritePosition: {x: 1145, y: 478}
+  - name: STK_11_svechka
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1296
+      y: 2353
+      width: 153
+      height: 209
+    spriteID: ca5415b0dc6d474438ab744cc42c7a6d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1296, y: 2353}
+    spritePosition: {x: 990, y: 381}
+  - name: PLACER_STK_11_svechka
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 730
+      y: 3034
+      width: 153
+      height: 209
+    spriteID: 6d6a54746617d324e94c449fadb7d5aa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 730, y: 3034}
+    spritePosition: {x: 990, y: 381}
+  - name: PLACER_STK_10_butulka
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 743
+      width: 130
+      height: 201
+    spriteID: b28a53bda63903d419946d54e906ce99
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 743}
+    spritePosition: {x: 1145, y: 479}
+  - name: STK_12_stol
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3561
+      width: 457
+      height: 362
+    spriteID: d4ff5525402a665479653b099e9e5953
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3561}
+    spritePosition: {x: 892, y: 235}
+  - name: STK_13_travki
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 940
+      y: 3112
+      width: 309
+      height: 360
+    spriteID: 0b7343dcc5913804f84373775cf97309
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 940, y: 3112}
+    spritePosition: {x: 456, y: 1293}
+  - name: PLACER_STK_15_eye
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1197
+      y: 2176
+      width: 287
+      height: 104
+    spriteID: 6f3611f36033768429182f04055db1f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1197, y: 2176}
+    spritePosition: {x: 580, y: 785}
+  - name: STK_14_kotel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 473
+      y: 3620
+      width: 348
+      height: 342
+    spriteID: 7b30552e595563142b351142a7d03905
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 473, y: 3620}
+    spritePosition: {x: 625, y: 422}
+  - name: STK_15_eye
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 473
+      y: 3970
+      width: 287
+      height: 104
+    spriteID: d5bd22901341f0441ac46b4e5d00a572
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 473, y: 3970}
+    spritePosition: {x: 580, y: 785}
+  - name: STK_16_tukva2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1257
+      y: 3798
+      width: 250
+      height: 240
+    spriteID: 195f78da8b089f74db564ad4fbad22e0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1257, y: 3798}
+    spritePosition: {x: 442, y: 265}
+  - name: STK_17_tukva1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1257
+      y: 3480
+      width: 239
+      height: 310
+    spriteID: c01fb326fdc4a7b479f71628d564a36a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1257, y: 3480}
+    spritePosition: {x: 313, y: 335}
+  - name: OVR_18_shkaf
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 473
+      y: 1767
+      width: 459
+      height: 889
+    spriteID: e95485b2816dde34980f63f07af19f43
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 473, y: 1767}
+    spritePosition: {x: 61, y: 437}
+  - name: PLACER_STK_1_butulka3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 2017
+      width: 112
+      height: 168
+    spriteID: be026f0d2b027f049911ebaedfc3d282
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 2017}
+    spritePosition: {x: 255, y: 661}
+  - name: PLACER_STK_3_kristal
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 2193
+      width: 122
+      height: 141
+    spriteID: 789256a5adb8e8141b85e57973c4ec74
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 2193}
+    spritePosition: {x: 322, y: 951}
+  - name: PLACER_STK_8_knigi
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 152
+      y: 3931
+      width: 140
+      height: 161
+    spriteID: 47bebd7185d4dce4c9d509d3e0553060
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 152, y: 3931}
+    spritePosition: {x: 182, y: 870}
+  - name: PLACER_STK_9_butulka2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 1631
+      width: 111
+      height: 202
+    spriteID: 46e59203dda7a914aa05d85d9b32fe48
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 1631}
+    spritePosition: {x: 330, y: 706}
+  - name: STK_18_shkaf
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1767
+      width: 461
+      height: 889
+    spriteID: 1b62c6726ad976143a59ac16cbe69779
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1767}
+    spritePosition: {x: 61, y: 437}
+  - name: STK_19_podstavka
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1257
+      y: 3112
+      width: 246
+      height: 333
+    spriteID: 43f9cc6b589fa8849bb495c2eecef52e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1257, y: 3112}
+    spritePosition: {x: 1283, y: 469}
+  - name: STK_20_zerkalo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1197
+      y: 1767
+      width: 282
+      height: 401
+    spriteID: ed1da29849e6a1d4baa2d65861e17dd2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1197, y: 1767}
+    spritePosition: {x: 1157, y: 718}
+  - name: STK_21_okno
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 473
+      y: 3034
+      width: 249
+      height: 578
+    spriteID: 70c7726d40723cc458ac2238cbcbd615
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 473, y: 3034}
+    spritePosition: {x: 521, y: 819}
+  - name: PLACER_STK_6_polka
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 730
+      y: 3401
+      width: 188
+      height: 142
+    spriteID: eccba8dd773df9b4f9b22f4e0f1e46b5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 730, y: 3401}
+    spritePosition: {x: 1099, y: 1207}
+  - name: PLACER_STK_7_polka2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 322
+      width: 295
+      height: 204
+    spriteID: 11b6e4de01ae5ee41a0187ce086c92ea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 322}
+    spritePosition: {x: 824, y: 1083}
+  - name: PLACER_STK_12_stol
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 473
+      y: 2664
+      width: 457
+      height: 362
+    spriteID: c24e1a911c83bb943a5dbff5e33dea69
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 473, y: 2664}
+    spritePosition: {x: 892, y: 235}
+  - name: PLACER_STK_13_travki
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 940
+      y: 3480
+      width: 309
+      height: 360
+    spriteID: aa9acca856f9c94499c56c9de590e080
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 940, y: 3480}
+    spritePosition: {x: 456, y: 1293}
+  - name: PLACER_STK_14_kotel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 940
+      y: 2353
+      width: 348
+      height: 342
+    spriteID: 9c9ed45c2cbd5ca40a202fa557209137
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 940, y: 2353}
+    spritePosition: {x: 625, y: 422}
+  - name: 'PLACER_STK_16_tukva2 '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1782
+      y: 4
+      width: 250
+      height: 240
+    spriteID: 58fd03d19c5ef3d49b9c9dabc4eb33d0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1782, y: 4}
+    spritePosition: {x: 442, y: 265}
+  - name: PLACER_STK_17_tukva1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1535
+      y: 4
+      width: 239
+      height: 310
+    spriteID: 742085b4d8c2bca41a89f1d1c2a9a0b1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1535, y: 4}
+    spritePosition: {x: 313, y: 335}
+  - name: PLACER_STK_18_shkaf
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2664
+      width: 461
+      height: 889
+    spriteID: 5ae59b837b6df7c479ff24d81bd073cb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2664}
+    spritePosition: {x: 61, y: 437}
+  - name: PLACER_STK_19_podstavka
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1230
+      y: 2703
+      width: 246
+      height: 333
+    spriteID: de5e016d825450e43a137bfc25acc0df
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1230, y: 2703}
+    spritePosition: {x: 1283, y: 469}
+  - name: PLACER_STK_20_zerkalo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 940
+      y: 2703
+      width: 282
+      height: 401
+    spriteID: 23f51579577c9464db2a72fa0d5c0be8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 940, y: 2703}
+    spritePosition: {x: 1157, y: 718}
+  - name: PLACER_STK_21_okno
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 940
+      y: 1767
+      width: 249
+      height: 578
+    spriteID: 1efdf2b2fcdc3fd4c8df726b0fc739f0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 940, y: 1767}
+    spritePosition: {x: 521, y: 819}
+  - name: BG_Room
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1523
+      height: 1755
+    spriteID: 225ead3168cf781409a6ff2ffb833af2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 39, y: 40}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 0
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Stickers_Stash
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 17972053ddcc41d4b87488b189baaa70
+    layerID: 1028
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_1_butulka3
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: bfdc781e1268a5647a775c3cf15e1191
+    layerID: 1072
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 1
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1077
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: 'STK_1_butulka3 '
+    spriteName: 'STK_1_butulka3 '
+    isGroup: 0
+    parentIndex: 2
+    spriteID: 23b89981b6f83784a81fbdbdabf716cd
+    layerID: 1071
+    mosaicPosition: {x: 1535, y: 1841}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_2_miska
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: fbca0ad7e37c2624d946c216638dcfe5
+    layerID: 1074
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 4
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1079
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_2_miska
+    spriteName: STK_2_miska
+    isGroup: 0
+    parentIndex: 5
+    spriteID: 3d6c39d634531b446b11caf3efbddd50
+    layerID: 1070
+    mosaicPosition: {x: 1673, y: 534}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_3_kristal
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: cf37a53e6a8d08c4999d8074db3ba2de
+    layerID: 1081
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 7
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1083
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_3_kristal
+    spriteName: STK_3_kristal
+    isGroup: 0
+    parentIndex: 8
+    spriteID: d242b882fa511e34483198b2721c162e
+    layerID: 1069
+    mosaicPosition: {x: 300, y: 3931}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_4_palka
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: d5d8b2cdeaa6387459811b4397615d8a
+    layerID: 1128
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 10
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1130
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_4_palka
+    spriteName: STK_4_palka
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 7d6b9edd3eacaf649ae1c42e19f89dad
+    layerID: 1068
+    mosaicPosition: {x: 1535, y: 951}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_5_palka2
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 88e6ba2be0b25b949a3972645fe45c61
+    layerID: 1132
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 13
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1134
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_5_palka2
+    spriteName: STK_5_palka2
+    isGroup: 0
+    parentIndex: 14
+    spriteID: dd0e1d4c90831d94088427aef794694a
+    layerID: 1067
+    mosaicPosition: {x: 1535, y: 2342}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_6_polka
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 4b030a3b44620d44b8fdadc918188966
+    layerID: 1136
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Place_Zone
+    spriteName: 
+    isGroup: 1
+    parentIndex: 16
+    spriteID: ae4cb00f0dc6dae4a99ae8889ae19784
+    layerID: 1315
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_5_palka2
+    spriteName: 
+    isGroup: 1
+    parentIndex: 17
+    spriteID: 820127ec87a70d9409dc8739a4e63aac
+    layerID: 1290
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_5_palka2
+    spriteName: PLACER_STK_5_palka2
+    isGroup: 0
+    parentIndex: 18
+    spriteID: f6466bf4a466fc442a917d6aab9be2bf
+    layerID: 1289
+    mosaicPosition: {x: 1535, y: 2481}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 16
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1138
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_6_polka
+    spriteName: STK_6_polka
+    isGroup: 0
+    parentIndex: 20
+    spriteID: ea7512357bd272049b00619dfc2e0e26
+    layerID: 1066
+    mosaicPosition: {x: 730, y: 3251}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_7_polka2
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 6d3f29df986daa04caee884983b38c98
+    layerID: 1140
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Place_Zone
+    spriteName: 
+    isGroup: 1
+    parentIndex: 22
+    spriteID: ae4cb00f0dc6dae4a99ae8889ae19784
+    layerID: 1313
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_2_miska
+    spriteName: 
+    isGroup: 1
+    parentIndex: 23
+    spriteID: d51770d3eec0e544caec96f5c4717f30
+    layerID: 1305
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_2_miska
+    spriteName: PLACER_STK_2_miska
+    isGroup: 0
+    parentIndex: 24
+    spriteID: f2148f8e993e8754d9330afc3e05b80d
+    layerID: 1304
+    mosaicPosition: {x: 1673, y: 710}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_4_palka
+    spriteName: 
+    isGroup: 1
+    parentIndex: 23
+    spriteID: f4903330965d37d43adfca70ebef1438
+    layerID: 1295
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_4_palka
+    spriteName: PLACER_STK_4_palka
+    isGroup: 0
+    parentIndex: 26
+    spriteID: f229c03643d327547b23f4b41202f170
+    layerID: 1294
+    mosaicPosition: {x: 1535, y: 1186}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 22
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1142
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_7_polka2
+    spriteName: STK_7_polka2
+    isGroup: 0
+    parentIndex: 28
+    spriteID: b824beb9164ffd8469eb005f91d57f43
+    layerID: 1065
+    mosaicPosition: {x: 940, y: 3848}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_8_knigi
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 53764f3159c06f74fa600da3780f49c4
+    layerID: 1144
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 30
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1146
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_8_knigi
+    spriteName: STK_8_knigi
+    isGroup: 0
+    parentIndex: 31
+    spriteID: 7e9ecc2a647dd5c43a4552dca7b8e4d1
+    layerID: 1064
+    mosaicPosition: {x: 4, y: 3931}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_9_butulka2
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: e2337623badeac54b82ab578cb277840
+    layerID: 1148
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 33
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1150
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_9_butulka2
+    spriteName: STK_9_butulka2
+    isGroup: 0
+    parentIndex: 34
+    spriteID: 2fc52a9121cdbf143ba0902b6dc43866
+    layerID: 1063
+    mosaicPosition: {x: 1535, y: 1421}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_10_butulka
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: b5b57d5d4ec47a4488ab6890e9034cf3
+    layerID: 1152
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 36
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1154
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_10_butulka
+    spriteName: STK_10_butulka
+    isGroup: 0
+    parentIndex: 37
+    spriteID: 23b5dcf5342a56846a0ca0b81ca0cdf0
+    layerID: 1062
+    mosaicPosition: {x: 1535, y: 534}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_11_svechka
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: a5a47c41d867b8940af1344261568a37
+    layerID: 1156
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 39
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1158
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_11_svechka
+    spriteName: STK_11_svechka
+    isGroup: 0
+    parentIndex: 40
+    spriteID: ca5415b0dc6d474438ab744cc42c7a6d
+    layerID: 1061
+    mosaicPosition: {x: 1296, y: 2353}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_12_stol
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: c04360cc64b981a47b5e20f52f10ce07
+    layerID: 1160
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Place_Zone
+    spriteName: 
+    isGroup: 1
+    parentIndex: 42
+    spriteID: ae4cb00f0dc6dae4a99ae8889ae19784
+    layerID: 1317
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_11_svechka
+    spriteName: 
+    isGroup: 1
+    parentIndex: 43
+    spriteID: 3d89866a226d25840b17d475a893b366
+    layerID: 1260
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_11_svechka
+    spriteName: PLACER_STK_11_svechka
+    isGroup: 0
+    parentIndex: 44
+    spriteID: 6d6a54746617d324e94c449fadb7d5aa
+    layerID: 1259
+    mosaicPosition: {x: 730, y: 3034}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_10_butulka
+    spriteName: 
+    isGroup: 1
+    parentIndex: 43
+    spriteID: 6fa9a3cfdcc70924c91794b06595f9f2
+    layerID: 1265
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_10_butulka
+    spriteName: PLACER_STK_10_butulka
+    isGroup: 0
+    parentIndex: 46
+    spriteID: b28a53bda63903d419946d54e906ce99
+    layerID: 1264
+    mosaicPosition: {x: 1535, y: 743}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 42
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1162
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_12_stol
+    spriteName: STK_12_stol
+    isGroup: 0
+    parentIndex: 48
+    spriteID: d4ff5525402a665479653b099e9e5953
+    layerID: 1060
+    mosaicPosition: {x: 4, y: 3561}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_13_travki
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 4d6c30900982e7f4a9ca154f2d2c5b0d
+    layerID: 1164
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 50
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1166
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_13_travki
+    spriteName: STK_13_travki
+    isGroup: 0
+    parentIndex: 51
+    spriteID: 0b7343dcc5913804f84373775cf97309
+    layerID: 1059
+    mosaicPosition: {x: 940, y: 3112}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_14_kotel
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 3b636f0334aab4449942f076279bf67d
+    layerID: 1168
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Place_Zone
+    spriteName: 
+    isGroup: 1
+    parentIndex: 53
+    spriteID: ae4cb00f0dc6dae4a99ae8889ae19784
+    layerID: 1319
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_15_eye
+    spriteName: 
+    isGroup: 1
+    parentIndex: 54
+    spriteID: 180274fcd67dfbf4eb661e0fdb8b4df0
+    layerID: 1240
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_15_eye
+    spriteName: PLACER_STK_15_eye
+    isGroup: 0
+    parentIndex: 55
+    spriteID: 6f3611f36033768429182f04055db1f7
+    layerID: 1239
+    mosaicPosition: {x: 1197, y: 2176}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 53
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1170
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_14_kotel
+    spriteName: STK_14_kotel
+    isGroup: 0
+    parentIndex: 57
+    spriteID: 7b30552e595563142b351142a7d03905
+    layerID: 1058
+    mosaicPosition: {x: 473, y: 3620}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_15_eye
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: e4b3b2fb2be3b92479ad8d69616f478a
+    layerID: 1172
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 59
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1174
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_15_eye
+    spriteName: STK_15_eye
+    isGroup: 0
+    parentIndex: 60
+    spriteID: d5bd22901341f0441ac46b4e5d00a572
+    layerID: 1057
+    mosaicPosition: {x: 473, y: 3970}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_16_tukva2
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 420a43d40a78d81419232a44cb1e4938
+    layerID: 1176
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 62
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1178
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_16_tukva2
+    spriteName: STK_16_tukva2
+    isGroup: 0
+    parentIndex: 63
+    spriteID: 195f78da8b089f74db564ad4fbad22e0
+    layerID: 1056
+    mosaicPosition: {x: 1257, y: 3798}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_17_tukva1
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 1bb2523c2c5c87e4ca19f40596a46429
+    layerID: 1180
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 65
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1182
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_17_tukva1
+    spriteName: STK_17_tukva1
+    isGroup: 0
+    parentIndex: 66
+    spriteID: c01fb326fdc4a7b479f71628d564a36a
+    layerID: 1055
+    mosaicPosition: {x: 1257, y: 3480}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_18_shkaf
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: e565a9fe283b1c3429a925c10d540fd1
+    layerID: 1184
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Overlay
+    spriteName: 
+    isGroup: 1
+    parentIndex: 68
+    spriteID: ac89015d040733e47ab2004880289249
+    layerID: 1200
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: OVR_18_shkaf
+    spriteName: OVR_18_shkaf
+    isGroup: 0
+    parentIndex: 69
+    spriteID: e95485b2816dde34980f63f07af19f43
+    layerID: 725
+    mosaicPosition: {x: 473, y: 1767}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Place_Zone
+    spriteName: 
+    isGroup: 1
+    parentIndex: 68
+    spriteID: ae4cb00f0dc6dae4a99ae8889ae19784
+    layerID: 1321
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_1_butulka3
+    spriteName: 
+    isGroup: 1
+    parentIndex: 71
+    spriteID: bfee5f5a194ddab499a1dbe7e00b4849
+    layerID: 1310
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_1_butulka3
+    spriteName: PLACER_STK_1_butulka3
+    isGroup: 0
+    parentIndex: 72
+    spriteID: be026f0d2b027f049911ebaedfc3d282
+    layerID: 1309
+    mosaicPosition: {x: 1535, y: 2017}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_3_kristal
+    spriteName: 
+    isGroup: 1
+    parentIndex: 71
+    spriteID: 9dbf3378e0d0a6a4087407e465ab92e2
+    layerID: 1300
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_3_kristal
+    spriteName: PLACER_STK_3_kristal
+    isGroup: 0
+    parentIndex: 74
+    spriteID: 789256a5adb8e8141b85e57973c4ec74
+    layerID: 1299
+    mosaicPosition: {x: 1535, y: 2193}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_8_knigi
+    spriteName: 
+    isGroup: 1
+    parentIndex: 71
+    spriteID: efa7bf158a7862642a410ce921600c87
+    layerID: 1275
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_8_knigi
+    spriteName: PLACER_STK_8_knigi
+    isGroup: 0
+    parentIndex: 76
+    spriteID: 47bebd7185d4dce4c9d509d3e0553060
+    layerID: 1274
+    mosaicPosition: {x: 152, y: 3931}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_9_butulka2
+    spriteName: 
+    isGroup: 1
+    parentIndex: 71
+    spriteID: 6c80173a9da2c494f9d4ed79e1075da8
+    layerID: 1270
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_9_butulka2
+    spriteName: PLACER_STK_9_butulka2
+    isGroup: 0
+    parentIndex: 78
+    spriteID: 46e59203dda7a914aa05d85d9b32fe48
+    layerID: 1269
+    mosaicPosition: {x: 1535, y: 1631}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 68
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1186
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_18_shkaf
+    spriteName: STK_18_shkaf
+    isGroup: 0
+    parentIndex: 80
+    spriteID: 1b62c6726ad976143a59ac16cbe69779
+    layerID: 1054
+    mosaicPosition: {x: 4, y: 1767}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_19_podstavka
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 1907772a5199e314a9e4672b7ae8f59b
+    layerID: 1188
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 82
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1190
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_19_podstavka
+    spriteName: STK_19_podstavka
+    isGroup: 0
+    parentIndex: 83
+    spriteID: 43f9cc6b589fa8849bb495c2eecef52e
+    layerID: 1053
+    mosaicPosition: {x: 1257, y: 3112}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_20_zerkalo
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 73543e8a264451241baa0b7d0b29a625
+    layerID: 1192
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 85
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1194
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_20_zerkalo
+    spriteName: STK_20_zerkalo
+    isGroup: 0
+    parentIndex: 86
+    spriteID: ed1da29849e6a1d4baa2d65861e17dd2
+    layerID: 1052
+    mosaicPosition: {x: 1197, y: 1767}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: STK_21_okno
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: f48cfbcefd094504e98dd17f52cd1681
+    layerID: 1196
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Base
+    spriteName: 
+    isGroup: 1
+    parentIndex: 88
+    spriteID: 9ac0e29cc411b6a429893eebbb71593d
+    layerID: 1198
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: STK_21_okno
+    spriteName: STK_21_okno
+    isGroup: 0
+    parentIndex: 89
+    spriteID: 70c7726d40723cc458ac2238cbcbd615
+    layerID: 1051
+    mosaicPosition: {x: 473, y: 3034}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Prevous_Sticker_Shadow_Placer
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: d81d453fcbf8b4344b675925e6dde0e1
+    layerID: 1311
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_6_polka
+    spriteName: 
+    isGroup: 1
+    parentIndex: 91
+    spriteID: eb453ea7490cb4048b78beae69429940
+    layerID: 1285
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_6_polka
+    spriteName: PLACER_STK_6_polka
+    isGroup: 0
+    parentIndex: 92
+    spriteID: eccba8dd773df9b4f9b22f4e0f1e46b5
+    layerID: 1284
+    mosaicPosition: {x: 730, y: 3401}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_7_polka2
+    spriteName: 
+    isGroup: 1
+    parentIndex: 91
+    spriteID: 60c1f6a9001320745ad26a8f8083a42d
+    layerID: 1280
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_7_polka2
+    spriteName: PLACER_STK_7_polka2
+    isGroup: 0
+    parentIndex: 94
+    spriteID: 11b6e4de01ae5ee41a0187ce086c92ea
+    layerID: 1279
+    mosaicPosition: {x: 1535, y: 322}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_12_stol
+    spriteName: 
+    isGroup: 1
+    parentIndex: 91
+    spriteID: bfc48096f6e7a774980a8aed1bbb88d3
+    layerID: 1255
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_12_stol
+    spriteName: PLACER_STK_12_stol
+    isGroup: 0
+    parentIndex: 96
+    spriteID: c24e1a911c83bb943a5dbff5e33dea69
+    layerID: 1254
+    mosaicPosition: {x: 473, y: 2664}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_13_travki
+    spriteName: 
+    isGroup: 1
+    parentIndex: 91
+    spriteID: d93ae093b8a36a5409d32c6369e3d988
+    layerID: 1250
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_13_travki
+    spriteName: PLACER_STK_13_travki
+    isGroup: 0
+    parentIndex: 98
+    spriteID: aa9acca856f9c94499c56c9de590e080
+    layerID: 1249
+    mosaicPosition: {x: 940, y: 3480}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_14_kotel
+    spriteName: 
+    isGroup: 1
+    parentIndex: 91
+    spriteID: 2e751cfc2064d6e4a94af82d756e0c0f
+    layerID: 1245
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_14_kotel
+    spriteName: PLACER_STK_14_kotel
+    isGroup: 0
+    parentIndex: 100
+    spriteID: 9c9ed45c2cbd5ca40a202fa557209137
+    layerID: 1244
+    mosaicPosition: {x: 940, y: 2353}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_16_tukva2
+    spriteName: 
+    isGroup: 1
+    parentIndex: 91
+    spriteID: d32678a7f885dc040b457232fb88c6df
+    layerID: 1235
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: 'PLACER_STK_16_tukva2 '
+    spriteName: 'PLACER_STK_16_tukva2 '
+    isGroup: 0
+    parentIndex: 102
+    spriteID: 58fd03d19c5ef3d49b9c9dabc4eb33d0
+    layerID: 1344
+    mosaicPosition: {x: 1782, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_17_tukva1
+    spriteName: 
+    isGroup: 1
+    parentIndex: 91
+    spriteID: 8c779603faea2024598e43e06593bd79
+    layerID: 1230
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_17_tukva1
+    spriteName: PLACER_STK_17_tukva1
+    isGroup: 0
+    parentIndex: 104
+    spriteID: 742085b4d8c2bca41a89f1d1c2a9a0b1
+    layerID: 1229
+    mosaicPosition: {x: 1535, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_18_shkaf
+    spriteName: 
+    isGroup: 1
+    parentIndex: 91
+    spriteID: e1f83d8334619384b9a7c90106ec3197
+    layerID: 1225
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_18_shkaf
+    spriteName: PLACER_STK_18_shkaf
+    isGroup: 0
+    parentIndex: 106
+    spriteID: 5ae59b837b6df7c479ff24d81bd073cb
+    layerID: 1224
+    mosaicPosition: {x: 4, y: 2664}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_19_podstavka
+    spriteName: 
+    isGroup: 1
+    parentIndex: 91
+    spriteID: 172f90d4537b6324e950b6ee23b28868
+    layerID: 1217
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_19_podstavka
+    spriteName: PLACER_STK_19_podstavka
+    isGroup: 0
+    parentIndex: 108
+    spriteID: de5e016d825450e43a137bfc25acc0df
+    layerID: 1216
+    mosaicPosition: {x: 1230, y: 2703}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_20_zerkalo
+    spriteName: 
+    isGroup: 1
+    parentIndex: 91
+    spriteID: 0639fbe5c4e4ca14f9a2fffacfc1acf0
+    layerID: 1212
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_20_zerkalo
+    spriteName: PLACER_STK_20_zerkalo
+    isGroup: 0
+    parentIndex: 110
+    spriteID: 23f51579577c9464db2a72fa0d5c0be8
+    layerID: 1211
+    mosaicPosition: {x: 940, y: 2703}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: PLACER_STK_21_okno
+    spriteName: 
+    isGroup: 1
+    parentIndex: 91
+    spriteID: a8752710baf2cd7488852933f0c85cc1
+    layerID: 1207
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: PLACER_STK_21_okno
+    spriteName: PLACER_STK_21_okno
+    isGroup: 0
+    parentIndex: 112
+    spriteID: 1efdf2b2fcdc3fd4c8df726b0fc739f0
+    layerID: 1206
+    mosaicPosition: {x: 940, y: 1767}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: BG_Room
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: a7ecb61984cdf094fab8a6e2d5be1049
+    layerID: 1026
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: BG_Room
+    spriteName: BG_Room
+    isGroup: 0
+    parentIndex: 114
+    spriteID: 225ead3168cf781409a6ff2ffb833af2
+    layerID: 896
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 1
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

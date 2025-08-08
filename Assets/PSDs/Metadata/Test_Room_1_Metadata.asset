@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4540d5bf90a2d45bd4a936d47d0c74, type: 3}
+  m_Name: Test_Room_1_Metadata
+  m_EditorClassIdentifier: 
+  psdName: Test_Room_1
+  psdPrefab: {fileID: -8653719598885068355, guid: 0574676ed87c12344a258a9c3176911f, type: 3}
+  backgroundLayers: []
+  zoneLayers: []
+  overlayLayers: []
+  stickerDatas: []
+  stickerLayers: []
