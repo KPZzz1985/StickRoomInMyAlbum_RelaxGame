@@ -40,6 +40,18 @@ public class PsdProcessorWindow : EditorWindow
             {
                 importer.textureType = TextureImporterType.Sprite;
                 importer.spriteImportMode = SpriteImportMode.Multiple;
+                // Center pivot for all slices
+                var ti = importer;
+                var metas = ti.spritesheet;
+                for (int i = 0; i < metas.Length; i++)
+                {
+                    var m = metas[i];
+                    m.alignment = (int)SpriteAlignment.Center;
+                    m.pivot = new Vector2(0.5f, 0.5f);
+                    metas[i] = m;
+                }
+                ti.spritesheet = metas;
+                // Apply and reimport with updated pivot settings
                 importer.SaveAndReimport();
                 AssetDatabase.Refresh();
             }
