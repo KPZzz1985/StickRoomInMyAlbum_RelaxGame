@@ -71,15 +71,23 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
         ClearSlots();
         int count = stash.Count;
         if (count == 0) return;
-        int leftIdx = (currentIndex - 1 + count) % count;
-        int rightIdx = (currentIndex + 1) % count;
-        // Instantiate icons
-        leftInst = Instantiate(iconPrefab, leftSlot, false);
-        SetupSlot(leftInst, stash[leftIdx], draggable: false);
+        // Left slot: only if previous exists
+        if (currentIndex > 0)
+        {
+            int leftIdx = currentIndex - 1;
+            leftInst = Instantiate(iconPrefab, leftSlot, false);
+            SetupSlot(leftInst, stash[leftIdx], draggable: false);
+        }
+        // Center slot: always
         centerInst = Instantiate(iconPrefab, centerSlot, false);
         SetupSlot(centerInst, stash[currentIndex], draggable: true);
-        rightInst = Instantiate(iconPrefab, rightSlot, false);
-        SetupSlot(rightInst, stash[rightIdx], draggable: false);
+        // Right slot: only if next exists
+        if (currentIndex + 1 < count)
+        {
+            int rightIdx = currentIndex + 1;
+            rightInst = Instantiate(iconPrefab, rightSlot, false);
+            SetupSlot(rightInst, stash[rightIdx], draggable: false);
+        }
     }
 
     private void SetupSlot(GameObject inst, Entry e, bool draggable)
@@ -103,15 +111,23 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
     private void OnPrev()
     {
         if (stash.Count == 0) return;
-        currentIndex = (currentIndex - 1 + stash.Count) % stash.Count;
-        UpdateSlots();
+        // Move left if possible
+        if (currentIndex > 0)
+        {
+            currentIndex--;
+            UpdateSlots();
+        }
     }
 
     private void OnNext()
     {
         if (stash.Count == 0) return;
-        currentIndex = (currentIndex + 1) % stash.Count;
-        UpdateSlots();
+        // Move right if possible
+        if (currentIndex < stash.Count - 1)
+        {
+            currentIndex++;
+            UpdateSlots();
+        }
     }
 
     /// <summary>Call after a sticker is placed to remove it and refill carousel.</summary>
