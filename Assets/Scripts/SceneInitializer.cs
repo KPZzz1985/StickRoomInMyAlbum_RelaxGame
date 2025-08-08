@@ -180,8 +180,43 @@ public class SceneInitializer : MonoBehaviour
         // Start animated placement: base+overlay in parallel, then zones sequentially
         StartCoroutine(AnimatePlacement(primaryTransforms, zoneTransforms, stickerId));
 
-        // Remove placeholder
+        // Remove this placeholder
         placeholderTransform.gameObject.SetActive(false);
+        // Activate nested placeholders inside this sticker (place zones)
+        foreach (Transform grp in stkObj)
+        {
+            if (grp.name.StartsWith("Place_Zone"))
+            {
+                grp.gameObject.SetActive(true);
+                // For each placeholder group, attach scripts to the SpriteRenderer leaf
+                foreach (Transform phGroup in grp)
+                {
+                    if (phGroup.name.StartsWith("PLACER_STK_"))
+                    {
+                        // Find the SpriteRenderer leaf under this placeholder group
+                        var srLeaf = FindSpriteRendererInChildren(phGroup);
+                        if (srLeaf != null)
+                        {
+                            var leafObj = srLeaf.gameObject;
+                            // Add PlaceholderArea if missing
+                            if (leafObj.GetComponent<PlaceholderArea>() == null)
+                                leafObj.AddComponent<PlaceholderArea>();
+                            // Add BoxCollider2D trigger if missing
+                            if (leafObj.GetComponent<BoxCollider2D>() == null)
+                            {
+                                var box = leafObj.AddComponent<BoxCollider2D>();
+                                box.isTrigger = true;
+                                if (srLeaf.sprite != null)
+                                {
+                                    box.size = srLeaf.sprite.bounds.size;
+                                    box.offset = srLeaf.sprite.bounds.center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         // Update counter
         usedCount++;
