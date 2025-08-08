@@ -52,7 +52,10 @@ public class PlaceholderArea : MonoBehaviour, IDropHandler
         var dragHandler = dragObj.GetComponent<StickerDragHandler>();
         if (dragHandler != null)
             dragHandler.NotifyDropSuccess();
-
+        // Notify carousel to use current sticker and refill
+        var carousel = FindObjectOfType<InventoryCarouselWithPrefabs>();
+        if (carousel != null)
+            carousel.UseCurrent();
         // Optionally disable all placeholders that were hit?
         // ph.transform.gameObject.SetActive(false); // already done in PlaceSticker for this ph
     }
