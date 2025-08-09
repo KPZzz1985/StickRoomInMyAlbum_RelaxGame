@@ -105,14 +105,27 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
         if (img != null)
         {
             img.sprite = e.sprite;
-            // Manually fit sprite height into container, preserving aspect ratio
+            // Fit sprite inside container, preserving aspect ratio
             var instRt = inst.GetComponent<RectTransform>();
+            float containerWidth = instRt.rect.width;
             float containerHeight = instRt.rect.height;
-            float spriteAspect = (float)e.sprite.rect.width / e.sprite.rect.height;
+            float spriteWidth = e.sprite.rect.width;
+            float spriteHeight = e.sprite.rect.height;
+            float spriteAspect = spriteWidth / spriteHeight;
+            float containerAspect = containerWidth / containerHeight;
             var imgRt = img.rectTransform;
-            // Set height to container, width proportional
-            imgRt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, containerHeight);
-            imgRt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, containerHeight * spriteAspect);
+            if (spriteAspect > containerAspect)
+            {
+                // Sprite is wider relative to container: fit width
+                imgRt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, containerWidth);
+                imgRt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, containerWidth / spriteAspect);
+            }
+            else
+            {
+                // Sprite is taller relative to container: fit height
+                imgRt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, containerHeight);
+                imgRt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, containerHeight * spriteAspect);
+            }
         }
         var data = inst.GetComponent<StickerDragData>();
         if (data != null)
@@ -164,10 +177,26 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
     public void UseCurrent()
     {
         if (stash.Count == 0) return;
+        // Determine direction: if removal not at end, next item shifts into center (from right)
+        int oldIndex = currentIndex;
         stash.RemoveAt(currentIndex);
-        if (stash.Count == 0) { ClearSlots(); return; }
-        if (currentIndex >= stash.Count) currentIndex = stash.Count - 1;
+        // If empty after removal, clear
+        if (stash.Count == 0)
+        {
+            ClearSlots();
+            return;
+        }
+        // After removal, if oldIndex is within new range, fill from right; otherwise, from left
+        bool fromRight = oldIndex < stash.Count;
+        // Adjust currentIndex if we removed the last element
+        if (currentIndex >= stash.Count)
+            currentIndex = stash.Count - 1;
         UpdateSlots();
+        // Play wave from appropriate side
+        if (fromRight)
+            AnimateWaveNext().Forget();
+        else
+            AnimateWavePrev().Forget();
     }
 
     // Wave animation when pressing Next: right->center->left with explicit delays
