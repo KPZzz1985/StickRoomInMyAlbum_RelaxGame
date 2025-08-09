@@ -31,3 +31,4 @@ Shader "UI/AlphaMaskWhite" {
         }
     }
 }
+

@@ -218,33 +218,51 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
     private async UniTaskVoid AnimateWaveNext()
     {
         // stage 1
-        if (rightInst != null)
+        if (rightInst != null && rightHighlight != null)
+        {
+            _ = ScalePulse(rightHighlight.transform, 0.5f, pulseDuration);
             _ = ScalePulse(rightInst.transform, 0.5f, pulseDuration);
+        }
         // wait for next stage
         await UniTask.Delay(TimeSpan.FromSeconds(stageDelay));
         // stage 2
-        if (centerInst != null)
+        if (centerInst != null && centerHighlight != null)
+        {
+            _ = ScalePulse(centerHighlight.transform, 1.25f, pulseDuration);
             _ = ScalePulse(centerInst.transform, 1.25f, pulseDuration);
+        }
         await UniTask.Delay(TimeSpan.FromSeconds(stageDelay));
         // stage 3
-        if (leftInst != null)
+        if (leftInst != null && leftHighlight != null)
+        {
+            _ = ScalePulse(leftHighlight.transform, 1.5f, pulseDuration);
             _ = ScalePulse(leftInst.transform, 1.5f, pulseDuration);
+        }
     }
 
     // Wave animation when pressing Prev: left->center->right with explicit delays
     private async UniTaskVoid AnimateWavePrev()
     {
         // stage 1
-        if (leftInst != null)
+        if (leftInst != null && leftHighlight != null)
+        {
+            _ = ScalePulse(leftHighlight.transform, 0.5f, pulseDuration);
             _ = ScalePulse(leftInst.transform, 0.5f, pulseDuration);
+        }
         await UniTask.Delay(TimeSpan.FromSeconds(stageDelay));
         // stage 2
-        if (centerInst != null)
+        if (centerInst != null && centerHighlight != null)
+        {
+            _ = ScalePulse(centerHighlight.transform, 1.25f, pulseDuration);
             _ = ScalePulse(centerInst.transform, 1.25f, pulseDuration);
+        }
         await UniTask.Delay(TimeSpan.FromSeconds(stageDelay));
         // stage 3
-        if (rightInst != null)
+        if (rightInst != null && rightHighlight != null)
+        {
+            _ = ScalePulse(rightHighlight.transform, 1.5f, pulseDuration);
             _ = ScalePulse(rightInst.transform, 1.5f, pulseDuration);
+        }
     }
 
     // Scale pulse: scale to factor and back over totalDuration (half up and half down)
