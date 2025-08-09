@@ -102,7 +102,18 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
     private void SetupSlot(GameObject inst, Entry e, bool draggable)
     {
         var img = inst.GetComponent<Image>();
-        if (img != null) img.sprite = e.sprite;
+        if (img != null)
+        {
+            img.sprite = e.sprite;
+            // Manually fit sprite height into container, preserving aspect ratio
+            var instRt = inst.GetComponent<RectTransform>();
+            float containerHeight = instRt.rect.height;
+            float spriteAspect = (float)e.sprite.rect.width / e.sprite.rect.height;
+            var imgRt = img.rectTransform;
+            // Set height to container, width proportional
+            imgRt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, containerHeight);
+            imgRt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, containerHeight * spriteAspect);
+        }
         var data = inst.GetComponent<StickerDragData>();
         if (data != null)
         {
