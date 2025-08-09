@@ -27,6 +27,13 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
     [Header("Icon Prefab")]
     [Tooltip("InventoryIcon prefab with Image, StickerDragData, StickerDragHandler, CanvasGroup")]
     [SerializeField] private GameObject iconPrefab;
+    [Header("Timing Settings")]
+    [Tooltip("Duration of each pulse in seconds (scale up + down)")]
+    [SerializeField] private float pulseDuration = 0.5f;
+    [Tooltip("Delay between pulse stages in seconds")]
+    [SerializeField] private float stageDelay = 0.5f;
+    [Tooltip("Disable nav buttons for this duration after click")]
+    [SerializeField] private float disableDuration = 0.75f;
 
     private class Entry { public string id; public GameObject prefab; public Sprite sprite; }
     private List<Entry> stash = new List<Entry>();
@@ -118,6 +125,10 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
         {
             currentIndex--;
             UpdateSlots();
+            // disable buttons to prevent rapid clicks
+            prevButton.interactable = false;
+            nextButton.interactable = false;
+            _ = ReenableButtonsAsync();
             AnimateWavePrev().Forget();
         }
     }
@@ -130,6 +141,10 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
         {
             currentIndex++;
             UpdateSlots();
+            // disable buttons to prevent rapid clicks
+            prevButton.interactable = false;
+            nextButton.interactable = false;
+            _ = ReenableButtonsAsync();
             AnimateWaveNext().Forget();
         }
     }
@@ -144,31 +159,44 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
         UpdateSlots();
     }
 
-    // Wave animation when pressing Next: right->center->left
+    // Wave animation when pressing Next: right->center->left with explicit delays
     private async UniTaskVoid AnimateWaveNext()
     {
+        // stage 1
         if (rightInst != null)
-            await ScalePulse(rightInst.transform, 2f, 0.075f);
+            _ = ScalePulse(rightInst.transform, 0.5f, pulseDuration);
+        // wait for next stage
+        await UniTask.Delay(TimeSpan.FromSeconds(stageDelay));
+        // stage 2
         if (centerInst != null)
-            await ScalePulse(centerInst.transform, 1.5f, 0.075f);
+            _ = ScalePulse(centerInst.transform, 1.25f, pulseDuration);
+        await UniTask.Delay(TimeSpan.FromSeconds(stageDelay));
+        // stage 3
         if (leftInst != null)
-            await ScalePulse(leftInst.transform, 1.25f, 0.075f);
+            _ = ScalePulse(leftInst.transform, 1.5f, pulseDuration);
     }
 
-    // Wave animation when pressing Prev: left->center->right
+    // Wave animation when pressing Prev: left->center->right with explicit delays
     private async UniTaskVoid AnimateWavePrev()
     {
+        // stage 1
         if (leftInst != null)
-            await ScalePulse(leftInst.transform, 2f, 0.075f);
+            _ = ScalePulse(leftInst.transform, 0.5f, pulseDuration);
+        await UniTask.Delay(TimeSpan.FromSeconds(stageDelay));
+        // stage 2
         if (centerInst != null)
-            await ScalePulse(centerInst.transform, 1.5f, 0.075f);
+            _ = ScalePulse(centerInst.transform, 1.25f, pulseDuration);
+        await UniTask.Delay(TimeSpan.FromSeconds(stageDelay));
+        // stage 3
         if (rightInst != null)
-            await ScalePulse(rightInst.transform, 1.25f, 0.075f);
+            _ = ScalePulse(rightInst.transform, 1.5f, pulseDuration);
     }
 
     // Scale pulse: scale to factor and back over totalDuration (half up and half down)
     private async UniTask ScalePulse(Transform tr, float factor, float totalDuration)
     {
+        // If the transform or its GameObject has been destroyed, exit
+        if (tr == null) return;
         Vector3 initial = tr.localScale;
         Vector3 target = initial * factor;
         float half = totalDuration * 0.5f;
@@ -176,19 +204,29 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
         // scale up
         while (elapsed < half)
         {
+            if (tr == null) return;
             tr.localScale = Vector3.Lerp(initial, target, elapsed / half);
             elapsed += Time.deltaTime;
             await UniTask.Yield();
         }
-        tr.localScale = target;
+        if (tr != null) tr.localScale = target;
         // scale down
         elapsed = 0f;
         while (elapsed < half)
         {
+            if (tr == null) return;
             tr.localScale = Vector3.Lerp(target, initial, elapsed / half);
             elapsed += Time.deltaTime;
             await UniTask.Yield();
         }
-        tr.localScale = initial;
+        if (tr != null) tr.localScale = initial;
+    }
+    
+    // Re-enable nav buttons after disableDuration
+    private async UniTask ReenableButtonsAsync()
+    {
+        await UniTask.Delay(TimeSpan.FromSeconds(disableDuration));
+        if (prevButton != null) prevButton.interactable = true;
+        if (nextButton != null) nextButton.interactable = true;
     }
 }
