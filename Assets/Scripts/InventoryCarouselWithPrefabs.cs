@@ -11,6 +11,15 @@ using Cysharp.Threading.Tasks;
 /// </summary>
 public class InventoryCarouselWithPrefabs : MonoBehaviour
 {
+    // Highlights under each slot icon
+    private GameObject leftHighlight, centerHighlight, rightHighlight;
+    [Header("Highlight Material")]
+    [Tooltip("Material using UI/AlphaMaskWhite shader for white alpha mask highlight")]
+    [SerializeField] private Material highlightMaterial;
+    [Header("Highlight Settings")]
+    [Tooltip("Scale multiplier for highlight overlay relative to slot size")]
+    [SerializeField] private float highlightScale = 1.3f;
+
     [Header("Inventory Data")]
     [Tooltip("Container where SceneInitializer spawns raw inventory icons. These will be hidden.")]
     [SerializeField] private RectTransform content;
@@ -70,8 +79,11 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
 
     private void ClearSlots()
     {
+        if (leftHighlight != null) Destroy(leftHighlight);
         if (leftInst != null) Destroy(leftInst);
+        if (centerHighlight != null) Destroy(centerHighlight);
         if (centerInst != null) Destroy(centerInst);
+        if (rightHighlight != null) Destroy(rightHighlight);
         if (rightInst != null) Destroy(rightInst);
     }
 
@@ -80,20 +92,23 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
         ClearSlots();
         int count = stash.Count;
         if (count == 0) return;
-        // Left slot: only if previous exists
+        // Left slot: only if previous exists (highlight then icon)
         if (currentIndex > 0)
         {
             int leftIdx = currentIndex - 1;
+            leftHighlight = CreateHighlight(leftSlot, stash[leftIdx].sprite);
             leftInst = Instantiate(iconPrefab, leftSlot, false);
             SetupSlot(leftInst, stash[leftIdx], draggable: false);
         }
-        // Center slot: always
+        // Center slot: always (highlight then icon)
+        centerHighlight = CreateHighlight(centerSlot, stash[currentIndex].sprite);
         centerInst = Instantiate(iconPrefab, centerSlot, false);
         SetupSlot(centerInst, stash[currentIndex], draggable: true);
-        // Right slot: only if next exists
+        // Right slot: only if next exists (highlight then icon)
         if (currentIndex + 1 < count)
         {
             int rightIdx = currentIndex + 1;
+            rightHighlight = CreateHighlight(rightSlot, stash[rightIdx].sprite);
             rightInst = Instantiate(iconPrefab, rightSlot, false);
             SetupSlot(rightInst, stash[rightIdx], draggable: false);
         }
@@ -268,5 +283,60 @@ public class InventoryCarouselWithPrefabs : MonoBehaviour
         await UniTask.Delay(TimeSpan.FromSeconds(disableDuration));
         if (prevButton != null) prevButton.interactable = true;
         if (nextButton != null) nextButton.interactable = true;
+    }
+
+    // Creates a procedural white highlight behind slot icon
+    private GameObject CreateHighlight(RectTransform slot, Sprite sprite)
+    {
+        var go = new GameObject("Highlight", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
+        go.transform.SetParent(slot, false);
+        var img = go.GetComponent<Image>();
+        img.sprite = sprite;
+        img.color = Color.white;
+        // Apply mask material to render white fill using alpha
+        if (highlightMaterial != null)
+        {
+            img.material = highlightMaterial;
+        }
+        else
+        {
+            // Fallback: create material from shader
+            var sh = Shader.Find("UI/AlphaMaskWhite");
+            if (sh != null)
+            {
+                img.material = new Material(sh);
+            }
+            else
+            {
+                Debug.LogWarning("Highlight shader 'UI/AlphaMaskWhite' not found");
+            }
+        }
+        // Fit sprite inside container*1.3, preserving aspect
+        var rt = go.GetComponent<RectTransform>();
+        // Apply scale multiplier to slot size
+        float containerW = slot.rect.width * highlightScale;
+        float containerH = slot.rect.height * highlightScale;
+        float spriteAspect = sprite.rect.width / sprite.rect.height;
+        float containerAspect = containerW / containerH;
+        float width, height;
+        if (spriteAspect > containerAspect)
+        {
+            width = containerW;
+            height = containerW / spriteAspect;
+        }
+        else
+        {
+            height = containerH;
+            width = containerH * spriteAspect;
+        }
+        rt.anchorMin = new Vector2(0.5f, 0.5f);
+        rt.anchorMax = new Vector2(0.5f, 0.5f);
+        rt.pivot = new Vector2(0.5f, 0.5f);
+        rt.anchoredPosition = Vector2.zero;
+        rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width);
+        rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
+        // Place behind other children
+        go.transform.SetAsFirstSibling();
+        return go;
     }
 }
