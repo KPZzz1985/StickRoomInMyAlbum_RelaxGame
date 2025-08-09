@@ -5,10 +5,13 @@ StickRoomInMyAlbum is a Unity-based engine for a sticker-room experience, inspir
 
 - Import a specially structured PSD file with layers for background, shadows (ghost outlines), and hidden sticker objects.
 - Automatically parse PSD layers into Unity GameObjects, recording sprite, position, and sorting order.
-- Generate a scrollable inventory UI of sticker icons.
-- Drag & drop stickers from inventory onto matching shadow outlines, snapping them into place, removing the shadow, and revealing nested placement zones or overlays.
-- Support two-layered stickers (e.g., cabinets with inner shelves) where nested placeholders appear only after the parent sticker is placed.
-- Trigger animations when stickers are placed correctly, replacing static sprites with animated prefabs.
+- Generate a three-slot carousel inventory UI with click navigation, highlight overlays, and a used/total sticker counter.
+- Allow only the center slot icon to be interactable (draggable).
+- Drag & drop stickers from inventory onto matching shadow outlines in world space, snapping them into place and activating nested placeholders or overlays.
+- Support nested `Place_Zone` containers: placeholders within stickers only appear after their parent is placed.
+- Trigger wave animations for carousel icons and bounce animations for sticker placements using UniTask.
+- Use custom shaders: `Custom/SpriteDistortion` for drag distortion, `UI/AlphaMaskWhite` for highlight overlays.
+- Full touch input support for mobile devices (Android/iOS).
 - Asynchronous operations use UniTask; UI text uses TextMeshPro.
 
 ---
@@ -81,7 +84,25 @@ Naming conventions:
 - **`StickerDragHandler`** (`Assets/Scripts/StickerDragHandler.cs`): implements `IBeginDragHandler`, `IDragHandler`, `IEndDragHandler` on UI icon:
   - Manages drag visuals, raycast blocking, and resetting if drop fails.
 
+### 4. Inventory Carousel UI
+- **`InventoryCarouselWithPrefabs`** (`Assets/Scripts/InventoryCarouselWithPrefabs.cs`)
+  - Manages a three-slot carousel inventory (leftSlot, centerSlot, rightSlot).
+  - Instantiates `InventoryIcon` prefab (Image, StickerDragData, StickerDragHandler, CanvasGroup) and fits sprites proportionally.
+  - Creates highlight overlays via `CreateHighlight` with `UI/AlphaMaskWhite` shader.
+  - Only the center icon is draggable; other icons are static.
+  - Navigation via `prevButton`/`nextButton` shifts `currentIndex`, calls `UpdateSlots`, and disables buttons briefly.
+  - Wave animations (`AnimateWaveNext`, `AnimateWavePrev`) pulse icons and highlights sequentially with `ScalePulse` (UniTask).
+  - `UseCurrent` removes the placed sticker and refills the carousel, triggering wave animation from the appropriate side.
+
 ---
+
+## Project Structure
+- Assets/Editor: Unity Editor scripts for PSD import and metadata generation.
+- Assets/Scripts: Core runtime scripts (SceneInitializer, PlaceholderArea, StickerDragData, StickerDragHandler, InventoryCarouselWithPrefabs).
+- Assets/Shaders: Custom shaders (`Custom/SpriteDistortion`, `UI/AlphaMaskWhite`).
+- Assets/PSDs: Source PSD files.
+- Assets/Metadata: Generated ScriptableObjects (`PsdMetadata`).
+- Assets/Prefabs: UI prefabs (`InventoryIcon`, etc.).
 
 ## Dependencies & Setup
 - Unity 2020.3 LTS (or newer) with 2D PSD Importer package installed.
